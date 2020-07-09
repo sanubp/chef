@@ -9,7 +9,11 @@ package 'apache2' do
 end
 
 file '/var/www/html/index.html' do
-	content '<h1> hello from apache cookbook'
+	content "<h1>hello from apache cookbook</h1>
+	<h2>IPADDRESS: #{node['ipaddress']}</h2>
+        <h2>HOSTNAME: #{node['hostname']}</h2>
+	"
+
 end
 
 service 'apache2' do
